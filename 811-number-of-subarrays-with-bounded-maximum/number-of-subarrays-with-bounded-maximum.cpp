@@ -1,28 +1,23 @@
 class Solution {
 public:
 int count(vector<int> nums,int b){
-   int  curr=0;
-    int  count =0;
-
+    int count =0, curr=0;
     for(int x : nums){
         if(x<=b){
-curr++;
+            curr++;
 
         }else{
             curr=0;
-           
 
         }
-         count +=curr ;
-    }
+        count+=curr;
 
+    }
     return count ;
 
 }
     int numSubarrayBoundedMax(vector<int>& nums, int left, int right) {
+        return count(nums,right) - count(nums,left-1);
 
-     return count(nums,right) - count(nums,left-1);
-
-        
     }
 };
